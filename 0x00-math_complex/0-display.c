@@ -17,12 +17,12 @@ void display_complex_number(complex c)
 	if (b < 0)
 	{
 		s = '-';
+		b = -b;
 	}
 	if (b == 1)
 	{
 		printf("%.0f %c i\n", a, s);
 	}
-
 	if (b != 0 && b != 1)
 	{
 		printf("%.0f %c %.0fi\n", a, s, b);
