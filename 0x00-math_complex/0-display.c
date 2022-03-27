@@ -6,8 +6,8 @@
  */
 void display_complex_number(complex c)
 {
-	int double a = c.a;
-	int double b = c.b;
+	double a = c.re;
+	double b = c.im;
 
 	if(a == 0 && b == 0)
 	{
@@ -15,14 +15,14 @@ void display_complex_number(complex c)
 	}
 	else if (a == 0)
 	{
-		printf("%fi\n", b);
+		printf("%.0fi\n", b);
 	}
 	else if (b == 0)
 	{
-		printf("%f\n", a);
+		printf("%.0f\n", a);
 	}
 	else
 	{
-		printf("%f + %fi\n", a, b);
+		printf("%.0f + %.0fi\n", a, b);
 	}
 }
