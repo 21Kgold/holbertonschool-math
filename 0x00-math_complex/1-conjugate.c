@@ -7,6 +7,6 @@
  */
 complex conjugate(complex c)
 {
-	double a = c.re;
-	double b = -1 * (c.im);
+	c.im = -1 * c.im;
+	return (c);
 }
