@@ -12,7 +12,7 @@ void display_complex_number(complex c)
 
 	if (b == 0)
 	{
-		printf("%.0f\n", a);
+		printf("%g\n", a);
 	}
 	if (b < 0)
 	{
@@ -21,10 +21,10 @@ void display_complex_number(complex c)
 	}
 	if (b == 1)
 	{
-		printf("%.0f %c i\n", a, s);
+		printf("%g %c i\n", a, s);
 	}
 	if (b != 0 && b != 1)
 	{
-		printf("%.0f %c %.0fi\n", a, s, b);
+		printf("%g %c %gi\n", a, s, b);
 	}
 }
