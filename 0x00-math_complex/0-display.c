@@ -14,15 +14,16 @@ void display_complex_number(complex c)
 	{
 		printf("%.0f\n", a);
 	}
-	else if (b < 0)
+	if (b < 0)
 	{
 		s = '-';
 	}
-	else if (b == 1)
+	if (b == 1)
 	{
 		printf("%.0f %c i\n", a, s);
 	}
-	else
+
+	if (b != 0 && b != 1)
 	{
 		printf("%.0f %c %.0fi\n", a, s, b);
 	}
