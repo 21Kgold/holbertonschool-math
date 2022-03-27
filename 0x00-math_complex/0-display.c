@@ -9,7 +9,7 @@ void display_complex_number(complex c)
 	double a = c.re;
 	double b = c.im;
 
-	if(a == 0 && b == 0)
+	if (a == 0 && b == 0)
 	{
 		printf("\n");
 	}
