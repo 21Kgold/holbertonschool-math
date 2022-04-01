@@ -1,7 +1,9 @@
 #include "heron.h"
+#include <math.h>
 /**
  * heron - return the heron secuence in a sigle linked list form,
- * that converges to the root of a p number
+ * that converges to the root of a p number until it reaches an error
+ * of 10exp-7 or less
  * @p: number to be evaluated
  * @x0: first guess of the secuence
  * Return: pointer to the first element of the linked list
@@ -9,31 +11,27 @@
 
 t_cell *heron(double p, double x0)
 {
-	t_cell *head = NULL, *new, *temp = NULL;
-	int i = 0;
-	double dif;
+	t_cell *head = NULL, *new;
 
-	do
+	for ( ; fabs((x0 * x0) - p) > 0.0000001 ; )
 	{
 		new = malloc(sizeof(t_cell));
 		if (new == NULL)
 		{
 			return (NULL);
 		}
-		if (temp != NULL)
+		new->elt = x0;
+		new->next = head;
+		head = new;
+		x0 = (x0 + (p / x0)) / 2;
+	}
+	new = malloc(sizeof(t_cell));
+		if (new == NULL)
 		{
-			temp->next = new;
+			return (NULL);
 		}
 		new->elt = x0;
-		new->next = NULL;
-		temp = new;
-		x0 = (x0 + (p / x0)) / 2;
-		dif = (x0 * x0) - p;
-		if (i == 0)
-		{
-			head = new;
-		}
-		i++;
-	}while((dif > 0.0000001) || ((dif * -1) > 0.0000001));
+		new->next = head;
+		head = new;
 	return (head);
 }
