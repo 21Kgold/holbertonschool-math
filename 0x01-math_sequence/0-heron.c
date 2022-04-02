@@ -12,9 +12,11 @@
 t_cell *heron(double p, double x0)
 {
 	t_cell *head = NULL, *new;
+	double dif;
 
-	for ( ; fabs((x0 * x0) - p) > 0.0000001 ; )
+	do
 	{
+		dif = fabs((x0 * x0) - p);
 		new = malloc(sizeof(t_cell));
 		if (new == NULL)
 		{
@@ -24,14 +26,6 @@ t_cell *heron(double p, double x0)
 		new->next = head;
 		head = new;
 		x0 = (x0 + (p / x0)) / 2;
-	}
-	new = malloc(sizeof(t_cell));
-		if (new == NULL)
-		{
-			return (NULL);
-		}
-		new->elt = x0;
-		new->next = head;
-		head = new;
+	}while (dif > 0.0000001);
 	return (head);
 }
