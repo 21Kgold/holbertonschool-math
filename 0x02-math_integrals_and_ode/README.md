@@ -1,0 +1,1 @@
+Methods to estimate integrals
