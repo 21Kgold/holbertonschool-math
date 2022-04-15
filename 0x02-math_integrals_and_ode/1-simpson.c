@@ -3,7 +3,7 @@
 #include "simpson.h"
 
 /**
- * rectangle_method - returns the estimate of the integral of the
+ * simpson - returns the estimate of the integral of the
  * function dx / (1 - x2) using the Simpson Method.
  * Description: to work properly, steps must be a even number, if not
  * the program still will work.
